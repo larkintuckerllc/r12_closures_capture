@@ -8,8 +8,9 @@ fn main() {
     {
         let v1 = vec![1, 2, 3];
         let v1_iter = v1.iter();
+        // 1 2 3
         for val in v1_iter {
-           println!("Got: {}", val); // 1 2 3
+           println!("Got: {}", val);
         }
         /*
         for val in v1_iter { // MOVED VALUE
@@ -23,19 +24,23 @@ fn main() {
         let v1_iter_map = v1.iter().map(|x| x + 1); // CLOSURE NOT EXECUTED
         let v2: Vec<_> = v1_iter_map.collect();
         let v2_iter = v2.iter();
+        // 2 3 4
         for val in v2_iter {
-           println!("Got: {}", val); // 2 3 4
+           println!("Got: {}", val);
         }
     }
 
-    let shoes = vec![
-        Shoe { size: 10, style: String::from("sneaker") },
-        Shoe { size: 13, style: String::from("sandal") },
-        Shoe { size: 10, style: String::from("boot") },
-    ];
-    let in_my_size = shoes_in_my_size(shoes, 10);
-    for val in in_my_size {
-        println!("Got: {}", val.style); // sneaker boot
+    {
+        let shoes = vec![
+            Shoe { size: 10, style: String::from("sneaker") },
+            Shoe { size: 13, style: String::from("sandal") },
+            Shoe { size: 10, style: String::from("boot") },
+        ];
+        let in_my_size = shoes_in_my_size(shoes, 10);
+        // sneaker boot
+        for val in in_my_size {
+            println!("Got: {}", val.style);
+        }
     }
 }
 
